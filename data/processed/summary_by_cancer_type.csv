@@ -1,0 +1,9 @@
+cancer_type,Trial_Count,Avg_Duration_Months,Avg_Enrollment,Total_Enrollment,Enrollment_Success_Rate,Endpoint_Success_Rate,Overall_Success_Rate
+Melanoma,143,32.4,167.2,23915,70.0,60.0,40.0
+Lung Cancer,134,30.4,165.0,22108,70.0,70.0,50.0
+Lymphoma,133,30.5,152.1,20233,80.0,60.0,40.0
+Pancreatic Cancer,124,30.2,161.6,20040,70.0,60.0,40.0
+Leukemia,118,30.5,157.9,18638,70.0,70.0,50.0
+Prostate Cancer,117,29.1,138.2,16173,80.0,60.0,50.0
+Breast Cancer,116,31.0,163.5,18962,80.0,60.0,50.0
+Colorectal Cancer,115,28.9,144.6,16628,60.0,70.0,40.0

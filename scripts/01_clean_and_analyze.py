@@ -23,8 +23,8 @@ def clean_trial_data(df):
     df['start_date'] = pd.to_datetime(df['start_date'])
     df['end_date'] = pd.to_datetime(df['end_date'])
 
-    df['start_date'] = df['start_date'].dt.year
-    df['end_date'] = df['end_date'].dt.year
+    df['start_year'] = df['start_date'].dt.year
+    df['end_year'] = df['end_date'].dt.year
 
     print("✓ Dates converted to year format")
 

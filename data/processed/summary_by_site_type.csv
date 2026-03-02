@@ -1,0 +1,3 @@
+is_multi_site,Trial_Count,Avg_Duration_Months,Avg_Enrollment,Avg_Enrollment_Rate,Avg_Patients_Per_Site,Enrollment_Success_Rate,Overall_Success_Rate
+Single-Site,68,18.3,25.6,1.5,25.6,60.0,40.0
+Multi-Site,932,31.3,166.3,4.9,20.5,70.0,40.0

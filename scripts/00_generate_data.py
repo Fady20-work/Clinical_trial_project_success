@@ -18,13 +18,13 @@ def generate_trial_data(n_trials=1000):
     print(f"Generating {n_trials} synthetic clinical trials...")
     trials = []
 
-    phases = ['Phase 1','Phase 2','Phase 3','Phase 4']
+    phases = ['Phase 1', 'Phase 2','Phase 3','Phase 4']
     phase_weights = [0.25 , 0.40 , 0.25 , 0.10]
     
     cancer_types = ['Breast Cancer', 'Lung Cancer', 'Colorectal Cancer', 'Prostate Cancer',
         'Melanoma', 'Leukemia', 'Lymphoma', 'Pancreatic Cancer']
     
-    sponsors = [ "OncoPharm Therapeutics", "Global BioResearch", "Apex Oncology Labs", "NovaCure Biotech", "Helix Therapeutics",
+    sponsors = [ "OncoPharm Therapeutics", "Global BioResearch", "Apex Oncology Labs","NovaCure Biotech", "Helix Therapeutics",
     "Clinical Research Group A","MedTrials International"]
 
     for i in range(n_trials):
@@ -42,7 +42,7 @@ def generate_trial_data(n_trials=1000):
         elif phase == 'Phase 3':
             blinding_type = random.choices(["Double Blind" , "Triple Blind"] , weights =[0.75 , 0.25])[0]
         else:
-            blinding_type = random.choices(["Open Label" , "Single Blind" , "Double Blind"] , weights =[0.30 , 0.20 , 0.50])[0]
+            blinding_type = random.choices(["Open Label" , "Single Blind" ,"Double Blind"] , weights =[0.30 , 0.20 , 0.50])[0]
 
         # ------------------------
         # Enrollment Modeling
@@ -58,6 +58,9 @@ def generate_trial_data(n_trials=1000):
             target_enrollment = int(np.random.normal(200, 60))
 
         target_enrollment = max(15, target_enrollment)
+
+# Note: Using Beta(12,1) for enrollment because Beta(5,2) was giving 
+# too many trials below 90% target. Adjusted based on output review.
 
         enrollment_achievement = np.random.beta(12, 1)
         actual_enrollment = int(target_enrollment * enrollment_achievement)

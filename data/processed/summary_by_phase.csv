@@ -1,0 +1,5 @@
+Phase,Trial_Count,Avg_Duration_Months,Avg_Enrollment,Avg_Enrollment_Rate,Avg_Patients_Per_Site,Avg_Achievement_Pct,Enrollment_Success_Rate,Endpoint_Success_Rate,Overall_Success_Rate
+Phase 1,249,17.2,27.0,1.7,14.1,90.1,60.0,70.0,50.0
+Phase 2,402,26.7,92.6,3.9,22.1,92.0,70.0,70.0,50.0
+Phase 3,263,46.9,369.2,8.4,25.2,92.1,70.0,50.0,40.0
+Phase 4,86,36.2,181.9,5.7,21.0,91.9,70.0,70.0,50.0

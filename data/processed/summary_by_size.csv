@@ -1,0 +1,5 @@
+size_category,Trial_Count,Avg_Duration_Months,Avg_Enrollment,Avg_Enrollment_Rate,Enrollment_Success_Rate,Overall_Success_Rate
+Small (<50),274,18.2,27.9,1.7,60.0,40.0
+large (150-400),235,43.4,279.8,7.0,70.0,40.0
+medium (50-150),393,27.2,96.6,4.0,70.0,50.0
+very large (400+),98,46.5,462.4,10.4,80.0,40.0
