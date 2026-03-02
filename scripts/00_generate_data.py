@@ -18,8 +18,8 @@ def generate_trial_data(n_trials=1000):
     print(f"Generating {n_trials} synthetic clinical trials...")
     trials = []
 
-    Phases = ['Phase 1','Phase 2','Phase 3','Phase 4']
-    Phase_weights = [0.25 , 0.40 , 0.25 , 0.10]
+    phases = ['Phase 1','Phase 2','Phase 3','Phase 4']
+    phase_weights = [0.25 , 0.40 , 0.25 , 0.10]
     
     cancer_types = ['Breast Cancer', 'Lung Cancer', 'Colorectal Cancer', 'Prostate Cancer',
         'Melanoma', 'Leukemia', 'Lymphoma', 'Pancreatic Cancer']
@@ -29,7 +29,7 @@ def generate_trial_data(n_trials=1000):
 
     for i in range(n_trials):
         trial_id = f"TRIAL-{str(i+1).zfill(4)}"
-        Phase = random.choices(Phases , Phase_weights)[0]
+        phase = random.choices(phases , phase_weights)[0]
         cancer_type = random.choice(cancer_types)
         sponsor = random.choice(sponsors)
 
@@ -37,9 +37,9 @@ def generate_trial_data(n_trials=1000):
         # Phase-Dependent Blinding (Advanced Logic)
         # ------------------------
 
-        if Phase == 'Phase 1':
+        if phase == 'Phase 1':
             blinding_type = random.choices(["Open Label" , "Single Blind"] , weights=[0.80 , 0.20])[0]
-        elif Phase == 'Phase 3':
+        elif phase == 'Phase 3':
             blinding_type = random.choices(["Double Blind" , "Triple Blind"] , weights =[0.75 , 0.25])[0]
         else:
             blinding_type = random.choices(["Open Label" , "Single Blind" , "Double Blind"] , weights =[0.30 , 0.20 , 0.50])[0]
@@ -48,18 +48,18 @@ def generate_trial_data(n_trials=1000):
         # Enrollment Modeling
         # ------------------------
 
-        if Phase == 'Phase 1':
+        if phase == 'Phase 1':
                 target_enrollment = int(np.random.normal(30, 10))
-        elif Phase == 'Phase 2':
+        elif phase == 'Phase 2':
             target_enrollment = int(np.random.normal(100, 30))
-        elif Phase == 'Phase 3':
+        elif phase == 'Phase 3':
             target_enrollment = int(np.random.normal(400, 100))
         else:
             target_enrollment = int(np.random.normal(200, 60))
 
         target_enrollment = max(15, target_enrollment)
 
-        enrollment_achievement = np.random.beta(5, 2)
+        enrollment_achievement = np.random.beta(12, 1)
         actual_enrollment = int(target_enrollment * enrollment_achievement)
         actual_enrollment = max(10, actual_enrollment)
 
@@ -67,11 +67,11 @@ def generate_trial_data(n_trials=1000):
             # Duration Modeling
             # ------------------------
 
-        if Phase == 'Phase 1':
+        if phase == 'Phase 1':
             duration_months = int(np.random.normal(18, 5))
-        elif Phase == 'Phase 2':
+        elif phase == 'Phase 2':
             duration_months = int(np.random.normal(28, 8))
-        elif Phase == 'Phase 3':
+        elif phase == 'Phase 3':
             duration_months = int(np.random.normal(48, 12))
         else:
             duration_months = int(np.random.normal(36, 10))
@@ -115,9 +115,9 @@ def generate_trial_data(n_trials=1000):
 
         enrollment_met_target = actual_enrollment >= (target_enrollment * 0.90)
 
-        if Phase == 'Phase 3':
+        if phase == 'Phase 3':
             primary_endpoint_met = random.choices([True, False], weights=[0.50, 0.50])[0]
-        elif Phase == 'Phase 2':
+        elif phase == 'Phase 2':
             primary_endpoint_met = random.choices([True, False], weights=[0.65, 0.35])[0]
         else:
             primary_endpoint_met = random.choices([True, False], weights=[0.70, 0.30])[0]
@@ -128,7 +128,7 @@ def generate_trial_data(n_trials=1000):
 
         trial = {
             'trial_id': trial_id,
-            'Phase': Phase,
+            'Phase': phase,
             'cancer_type': cancer_type,
             'sponsor': sponsor,
             'blinding_type': blinding_type,
