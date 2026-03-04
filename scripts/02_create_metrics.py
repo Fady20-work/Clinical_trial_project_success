@@ -56,7 +56,7 @@ def create_summary_tables():
     # ========================================================================
     print("Creating year trends...")
     
-    by_year = df.groupby('start_date').agg({
+    by_year = df.groupby('start_year').agg({
         'trial_id': 'count',
         'duration_months': 'mean',
         'actual_enrollment': 'mean',
@@ -81,7 +81,7 @@ def create_summary_tables():
     by_year = by_year.round(1)
     
     by_year = by_year.reset_index()
-    by_year.rename(columns={'start_date': 'Year'}, inplace=True)
+    by_year.rename(columns={'start_year': 'Year'}, inplace=True)
     by_year.to_csv('data/processed/summary_by_year.csv', index=False)
     print("✓ summary_by_year.csv")
     
