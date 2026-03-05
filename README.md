@@ -123,11 +123,15 @@ python scripts/02_create_summaries.py
 
 ## 📸 Screenshots
 
+<<<<<<< HEAD
 ![Dashboard Overview]
 
 ![Clinical_trial_project_success\screenshots\Clinical_trial_project overview.png](<screenshots/Clinical_trial_project overview.png>)
 
 ![screenshots/Key Insights.png](<screenshots/Key Insights.png>)
+=======
+![Dashboard Overview](![Clinical_trial_project_success\screenshots\Clinical_trial_project overview.png](<screenshots/Clinical_trial_project overview.png>))
+>>>>>>> 455be2ad594391f72daf5bef076c002d60b53c03
 
 # 📝 Next Steps
 
@@ -137,6 +141,9 @@ python scripts/02_create_summaries.py
 - [ ] Additional cancer types
 - [ ] Real-time data refresh simulation
 
+<<<<<<< HEAD
 ---
 
+=======
+>>>>>>> 455be2ad594391f72daf5bef076c002d60b53c03
 **Status:** ✅ Complete | **Last Updated:** March 2026
